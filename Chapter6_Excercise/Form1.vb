@@ -2,6 +2,8 @@
 ''March 14, 2020
 ''Chapter 6 Excercise
 
+Imports System.Text
+
 Public Class ProjectileForm
 
     Const GRAVITY As Integer = 32
@@ -129,23 +131,26 @@ Public Class ProjectileForm
         Dim time As Double = 0.00
         Dim ballHitGround As Boolean = False
         Dim format As String = "{0,4}{1,20}"
-        Dim builder As New System.Text.StringBuilder
+        Dim builder As New Text.StringBuilder
         builder.AppendFormat(format, "Time:", "Height: ")
         builder.AppendLine()
         While (time <> 5.0 And Not ballHitGround)
 
-            If (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) < 0) Then
-                ballHitGround = True
-            Else
-                ''TotalOutputBox.AppendText(String.Format(format, time.ToString("####0.00"), (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time)).ToString("####0.00") & Environment.NewLine))
-                builder.AppendFormat(format, time.ToString("####0.00"), (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time)).ToString("####0.00"))
-                builder.AppendLine()
-                time += 0.25
-            End If
+            GetTableValues(time, ballHitGround, format, builder)
 
         End While
 
         TotalOutputBox.Text = builder.ToString()
 
+    End Sub
+
+    Private Sub GetTableValues(ByRef time As Double, ByRef ballHitGround As Boolean, format As String, builder As StringBuilder)
+        If CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) < 0 Then
+            ballHitGround = True
+        Else
+            builder.AppendFormat(format, time.ToString("####0.00"), (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time)).ToString("####0.00"))
+            builder.AppendLine()
+            time += 0.25
+        End If
     End Sub
 End Class
