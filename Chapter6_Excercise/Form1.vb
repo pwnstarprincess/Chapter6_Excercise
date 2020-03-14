@@ -12,9 +12,9 @@ Public Class ProjectileForm
 
     End Sub
 
-    Private Function MaxHeight(height As Double, velocity As Double) As Double
+    Private Function CalculateHeightAsFunctionOfTime(height As Double, velocity As Double, time As Double) As Double
 
-        Return height + velocity * (velocity / GRAVITY) - 16 * ((velocity / GRAVITY) * (velocity / GRAVITY))
+        Return height + velocity * time - 16 * (time * time)
 
     End Function
 
@@ -66,7 +66,7 @@ Public Class ProjectileForm
 
         If (HeightAndVelocityNotEmpty()) Then
             ClearOutputField()
-            TotalOutputBox.AppendText("Max Height:    " + Convert.ToString(MaxHeight(GetHeight(), GetVelocity())) & Environment.NewLine)
+            TotalOutputBox.AppendText("Max Height:    " + Convert.ToString(CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), (GetVelocity() / GRAVITY))) & Environment.NewLine)
             ClearInputFields()
         End If
 
