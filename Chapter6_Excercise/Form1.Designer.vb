@@ -98,17 +98,17 @@ Partial Class ProjectileForm
         Me.MaxHeightButton.Location = New System.Drawing.Point(11, 81)
         Me.MaxHeightButton.Margin = New System.Windows.Forms.Padding(2)
         Me.MaxHeightButton.Name = "MaxHeightButton"
-        Me.MaxHeightButton.Size = New System.Drawing.Size(107, 71)
+        Me.MaxHeightButton.Size = New System.Drawing.Size(107, 44)
         Me.MaxHeightButton.TabIndex = 6
         Me.MaxHeightButton.Text = "Determine Maximum Height"
         Me.MaxHeightButton.UseVisualStyleBackColor = True
         '
         'ApproxTimeButton
         '
-        Me.ApproxTimeButton.Location = New System.Drawing.Point(11, 174)
+        Me.ApproxTimeButton.Location = New System.Drawing.Point(11, 144)
         Me.ApproxTimeButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ApproxTimeButton.Name = "ApproxTimeButton"
-        Me.ApproxTimeButton.Size = New System.Drawing.Size(107, 67)
+        Me.ApproxTimeButton.Size = New System.Drawing.Size(191, 41)
         Me.ApproxTimeButton.TabIndex = 7
         Me.ApproxTimeButton.Text = "Determine Approximate Time Until Ball Hits the Ground"
         Me.ApproxTimeButton.UseVisualStyleBackColor = True
@@ -118,35 +118,35 @@ Partial Class ProjectileForm
         Me.DisplayTableButton.Location = New System.Drawing.Point(225, 81)
         Me.DisplayTableButton.Margin = New System.Windows.Forms.Padding(2)
         Me.DisplayTableButton.Name = "DisplayTableButton"
-        Me.DisplayTableButton.Size = New System.Drawing.Size(107, 71)
+        Me.DisplayTableButton.Size = New System.Drawing.Size(107, 44)
         Me.DisplayTableButton.TabIndex = 8
         Me.DisplayTableButton.Text = "Display Table"
         Me.DisplayTableButton.UseVisualStyleBackColor = True
         '
         'QuitButton
         '
-        Me.QuitButton.Location = New System.Drawing.Point(223, 174)
+        Me.QuitButton.Location = New System.Drawing.Point(225, 144)
         Me.QuitButton.Margin = New System.Windows.Forms.Padding(2)
         Me.QuitButton.Name = "QuitButton"
-        Me.QuitButton.Size = New System.Drawing.Size(107, 67)
+        Me.QuitButton.Size = New System.Drawing.Size(107, 41)
         Me.QuitButton.TabIndex = 9
         Me.QuitButton.Text = "Quit"
         Me.QuitButton.UseVisualStyleBackColor = True
         '
         'TotalOutputBox
         '
-        Me.TotalOutputBox.Location = New System.Drawing.Point(67, 266)
+        Me.TotalOutputBox.Location = New System.Drawing.Point(64, 208)
         Me.TotalOutputBox.Multiline = True
         Me.TotalOutputBox.Name = "TotalOutputBox"
         Me.TotalOutputBox.ReadOnly = True
-        Me.TotalOutputBox.Size = New System.Drawing.Size(222, 74)
+        Me.TotalOutputBox.Size = New System.Drawing.Size(222, 272)
         Me.TotalOutputBox.TabIndex = 11
         '
         'ProjectileForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(363, 388)
+        Me.ClientSize = New System.Drawing.Size(363, 492)
         Me.Controls.Add(Me.TotalOutputBox)
         Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.DisplayTableButton)

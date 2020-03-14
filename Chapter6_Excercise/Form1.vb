@@ -128,17 +128,24 @@ Public Class ProjectileForm
 
         Dim time As Double = 0.00
         Dim ballHitGround As Boolean = False
-        TotalOutputBox.AppendText("Time:    " + "Height:    " & Environment.NewLine)
+        Dim format As String = "{0,4}{1,20}"
+        Dim builder As New System.Text.StringBuilder
+        builder.AppendFormat(format, "Time:", "Height: ")
+        builder.AppendLine()
         While (time <> 5.0 And Not ballHitGround)
 
             If (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) < 0) Then
                 ballHitGround = True
             Else
-                TotalOutputBox.AppendText(Convert.ToString(time) + "    " + Convert.ToString(CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time)) & Environment.NewLine)
+                ''TotalOutputBox.AppendText(String.Format(format, time.ToString("####0.00"), (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time)).ToString("####0.00") & Environment.NewLine))
+                builder.AppendFormat(format, time.ToString("####0.00"), (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time)).ToString("####0.00"))
+                builder.AppendLine()
                 time += 0.25
             End If
 
         End While
+
+        TotalOutputBox.Text = builder.ToString()
 
     End Sub
 End Class
