@@ -107,4 +107,38 @@ Public Class ProjectileForm
         End If
     End Sub
 
+    Private Sub ApproxTimeButton_Click(sender As Object, e As EventArgs) Handles ApproxTimeButton.Click
+
+        Dim time As Double = 0
+        Dim ballHitGround As Boolean = False
+
+        While (Not ballHitGround)
+            If (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) < 0) Then
+                ballHitGround = True
+            Else
+                time += 0.1
+            End If
+        End While
+
+        TotalOutputBox.AppendText("The approx time that the ball hit the ground is:    " + Convert.ToString(time) + "seconds" & Environment.NewLine)
+
+    End Sub
+
+    Private Sub DisplayTableButton_Click(sender As Object, e As EventArgs) Handles DisplayTableButton.Click
+
+        Dim time As Double = 0.00
+        Dim ballHitGround As Boolean = False
+        TotalOutputBox.AppendText("Time:    " + "Height:    " & Environment.NewLine)
+        While (time <> 5.0 And Not ballHitGround)
+
+            If (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) < 0) Then
+                ballHitGround = True
+            Else
+                TotalOutputBox.AppendText(Convert.ToString(time) + "    " + Convert.ToString(CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time)) & Environment.NewLine)
+                time += 0.25
+            End If
+
+        End While
+
+    End Sub
 End Class
