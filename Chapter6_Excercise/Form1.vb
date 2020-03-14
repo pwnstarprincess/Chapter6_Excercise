@@ -60,25 +60,6 @@ Public Class ProjectileForm
         DisplayTableButton.Enabled = True
     End Sub
 
-    Private Function HeightAndVelocityNotEmpty() As Boolean
-
-        If (Not String.IsNullOrEmpty(heightBox.Text) And Not String.IsNullOrEmpty(velocityBox.Text)) Then
-            Return True
-        Else
-            Return False
-        End If
-    End Function
-
-    Private Function InputValid() As Boolean
-
-        If (Not String.IsNullOrEmpty(heightBox.Text) And Not String.IsNullOrEmpty(velocityBox.Text) AndAlso IsNumeric(heightBox.Text) And IsNumeric(velocityBox.Text)) Then
-            Return True
-        Else
-            Return False
-        End If
-
-    End Function
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
