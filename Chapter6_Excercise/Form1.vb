@@ -37,6 +37,8 @@ Public Class ProjectileForm
 
     Private Sub ThrowError()
 
+        TotalOutputBox.BackColor = DefaultBackColor
+        TotalOutputBox.ForeColor = Color.Red
         TotalOutputBox.Text = "ERROR!!! Please enter a numeric value for the initial height and initial velocity"
 
     End Sub
@@ -66,6 +68,7 @@ Public Class ProjectileForm
         Else
             ClearOutputField()
             EnableButtons()
+            TotalOutputBox.ForeColor = Color.Black
         End If
     End Sub
 
@@ -78,6 +81,7 @@ Public Class ProjectileForm
         Else
             ClearOutputField()
             EnableButtons()
+            TotalOutputBox.ForeColor = Color.Black
         End If
     End Sub
 
