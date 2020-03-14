@@ -8,7 +8,7 @@ Public Class ProjectileForm
 
     Private Sub QuitProgram()
 
-        Me.Close()
+        Close()
 
     End Sub
 
