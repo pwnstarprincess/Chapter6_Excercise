@@ -7,11 +7,8 @@ Imports System.Text
 Public Class ProjectileForm
 
     Const GRAVITY As Integer = 32
-
     Private Sub QuitProgram()
-
         Close()
-
     End Sub
 
     Private Function CalculateHeightAsFunctionOfTime(height As Double, velocity As Double, time As Double) As Double
@@ -89,7 +86,6 @@ Public Class ProjectileForm
         Else
             ThrowError()
         End If
-
 
     End Sub
 
