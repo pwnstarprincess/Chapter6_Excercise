@@ -122,7 +122,7 @@ Public Class ProjectileForm
             End If
         End While
         ClearOutputField()
-        TotalOutputBox.AppendText("Time: " + time.ToString("####0.00") + "seconds")
+        TotalOutputBox.AppendText("Time: " + time.ToString("####0.00") + " " + "seconds")
 
     End Sub
 
