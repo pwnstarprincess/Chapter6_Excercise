@@ -108,7 +108,7 @@ Public Class ProjectileForm
 
     Private Sub ApproxTimeButton_Click(sender As Object, e As EventArgs) Handles ApproxTimeButton.Click
         ClearOutputField()
-        Dim time As Double = 0
+        Dim time As Double = 0.00
         While Not BallHitGround(time)
             time += 0.1
         End While
