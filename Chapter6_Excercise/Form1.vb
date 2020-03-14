@@ -29,6 +29,14 @@ Public Class ProjectileForm
 
     End Function
 
+    Private Sub ClearInputFields()
+
+        TotalOutputBox.Clear()
+        heightBox.Clear()
+        velocityBox.Clear()
+
+    End Sub
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -41,7 +49,8 @@ Public Class ProjectileForm
 
     Private Sub MaxHeightButton_Click(sender As Object, e As EventArgs) Handles MaxHeightButton.Click
 
-
+        ClearInputFields()
+        TotalOutputBox.AppendText("Max Height:    " + Convert.ToString(MaxHeight(GetHeight(), GetVelocity())) & Environment.NewLine)
 
 
     End Sub
