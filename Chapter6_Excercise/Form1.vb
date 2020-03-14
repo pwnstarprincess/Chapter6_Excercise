@@ -57,19 +57,6 @@ Public Class ProjectileForm
 
     End Sub
 
-    Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
-
-        QuitProgram()
-
-    End Sub
-
-    Private Sub MaxHeightButton_Click(sender As Object, e As EventArgs) Handles MaxHeightButton.Click
-
-        ClearOutputField()
-        TotalOutputBox.AppendText("Max Height: " + CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), (GetVelocity() / GRAVITY)).ToString("####0.00"))
-
-    End Sub
-
     Private Sub HeightBox_TextChanged(sender As Object, e As EventArgs) Handles heightBox.Leave
 
         If (String.IsNullOrEmpty(heightBox.Text) Or Not IsNumeric(heightBox.Text)) Then
@@ -94,18 +81,31 @@ Public Class ProjectileForm
         End If
     End Sub
 
+    Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
+
+        QuitProgram()
+
+    End Sub
+
+    Private Sub MaxHeightButton_Click(sender As Object, e As EventArgs) Handles MaxHeightButton.Click
+
+        ClearOutputField()
+        TotalOutputBox.AppendText("Max Height: " + CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), (GetVelocity() / GRAVITY)).ToString("####0.00"))
+
+    End Sub
+
     Private Sub ApproxTimeButton_Click(sender As Object, e As EventArgs) Handles ApproxTimeButton.Click
         ClearOutputField()
         Dim time As Double = 0
         Dim ballHitGround As Boolean = False
 
-            While (Not ballHitGround)
-                If (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) < 0) Then
-                    ballHitGround = True
-                Else
-                    time += 0.1
-                End If
-            End While
+        While (Not ballHitGround)
+            If (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) < 0) Then
+                ballHitGround = True
+            Else
+                time += 0.1
+            End If
+        End While
 
         TotalOutputBox.AppendText("Time: " + time.ToString("####0.00") + " " + "seconds")
 
