@@ -56,6 +56,7 @@ Public Class ProjectileForm
 
         ClearOutputField()
         TotalOutputBox.AppendText("Max Height:    " + Convert.ToString(MaxHeight(GetHeight(), GetVelocity())) & Environment.NewLine)
+        ClearInputFields()
 
 
     End Sub
