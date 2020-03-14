@@ -17,6 +17,14 @@ Public Class ProjectileForm
 
     End Function
 
+    Private Function BallHitGround(time As Double) As Boolean
+        If (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) < 0) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
     Private Function GetHeight() As Double
 
         Return Convert.ToDouble(heightBox.Text)
@@ -101,16 +109,9 @@ Public Class ProjectileForm
     Private Sub ApproxTimeButton_Click(sender As Object, e As EventArgs) Handles ApproxTimeButton.Click
         ClearOutputField()
         Dim time As Double = 0
-        Dim ballHitGround As Boolean = False
-
-        While (Not ballHitGround)
-            If (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) < 0) Then
-                ballHitGround = True
-            Else
-                time += 0.1
-            End If
+        While Not BallHitGround(time)
+            time += 0.1
         End While
-
         TotalOutputBox.AppendText("Time: " + time.ToString("####0.00") + " " + "seconds")
 
     End Sub
@@ -118,28 +119,23 @@ Public Class ProjectileForm
     Private Sub DisplayTableButton_Click(sender As Object, e As EventArgs) Handles DisplayTableButton.Click
         ClearOutputField()
         Dim time As Double = 0.00
-        Dim ballHitGround As Boolean = False
-            Dim format As String = "{0,4}{1,20}"
-            Dim builder As New Text.StringBuilder
-            builder.AppendFormat(format, "Time:", "Height: ")
-            builder.AppendLine()
-            While (time <> 5.0 And Not ballHitGround)
+        Dim format As String = "{0,4}{1,20}"
+        Dim builder As New Text.StringBuilder
+        builder.AppendFormat(format, "Time:", "Height: ")
+        builder.AppendLine()
+        While time <> 5.0 And Not BallHitGround(time)
 
-                GetTableValues(time, ballHitGround, format, builder)
+            GetTableValues(time, format, builder)
 
-            End While
+        End While
 
-            TotalOutputBox.Text = builder.ToString()
+        TotalOutputBox.Text = builder.ToString()
 
     End Sub
 
-    Private Sub GetTableValues(ByRef time As Double, ByRef ballHitGround As Boolean, format As String, builder As StringBuilder)
-        If CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) < 0 Then
-            ballHitGround = True
-        Else
-            builder.AppendFormat(format, time.ToString("####0.00"), (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time)).ToString("####0.00"))
-            builder.AppendLine()
-            time += 0.25
-        End If
+    Private Sub GetTableValues(ByRef time As Double, format As String, builder As StringBuilder)
+        builder.AppendFormat(format, time.ToString("####0.00"), (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time)).ToString("####0.00"))
+        builder.AppendLine()
+        time += 0.25
     End Sub
 End Class
