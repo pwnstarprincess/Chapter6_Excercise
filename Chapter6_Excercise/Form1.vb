@@ -48,6 +48,18 @@ Public Class ProjectileForm
 
     End Sub
 
+    Private Sub DisableButtons()
+        MaxHeightButton.Enabled = False
+        ApproxTimeButton.Enabled = False
+        DisplayTableButton.Enabled = False
+    End Sub
+
+    Private Sub EnableButtons()
+        MaxHeightButton.Enabled = True
+        ApproxTimeButton.Enabled = True
+        DisplayTableButton.Enabled = True
+    End Sub
+
     Private Function HeightAndVelocityNotEmpty() As Boolean
 
         If (Not String.IsNullOrEmpty(heightBox.Text) And Not String.IsNullOrEmpty(velocityBox.Text)) Then
@@ -79,36 +91,39 @@ Public Class ProjectileForm
 
     Private Sub MaxHeightButton_Click(sender As Object, e As EventArgs) Handles MaxHeightButton.Click
 
-        If (InputValid()) Then
-            ClearOutputField()
-            TotalOutputBox.AppendText("Max Height: " + CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), (GetVelocity() / GRAVITY)).ToString("####0.00"))
-        Else
-            ThrowError()
-        End If
+        ClearOutputField()
+        TotalOutputBox.AppendText("Max Height: " + CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), (GetVelocity() / GRAVITY)).ToString("####0.00"))
 
     End Sub
 
     Private Sub HeightBox_TextChanged(sender As Object, e As EventArgs) Handles heightBox.Leave
-        ClearOutputField()
+
         If (String.IsNullOrEmpty(heightBox.Text) Or Not IsNumeric(heightBox.Text)) Then
-            heightBox.Clear()
             ThrowError()
+            heightBox.Clear()
+            DisableButtons()
+        Else
+            ClearOutputField()
+            EnableButtons()
         End If
     End Sub
 
     Private Sub VelocityBox_TextChanged(sender As Object, e As EventArgs) Handles velocityBox.Leave
-        ClearOutputField()
+
         If (String.IsNullOrEmpty(velocityBox.Text) Or Not IsNumeric(velocityBox.Text)) Then
             ThrowError()
             velocityBox.Clear()
+            DisableButtons()
+        Else
+            ClearOutputField()
+            EnableButtons()
         End If
     End Sub
 
     Private Sub ApproxTimeButton_Click(sender As Object, e As EventArgs) Handles ApproxTimeButton.Click
-
-        If (InputValid()) Then
-            Dim time As Double = 0
-            Dim ballHitGround As Boolean = False
+        ClearOutputField()
+        Dim time As Double = 0
+        Dim ballHitGround As Boolean = False
 
             While (Not ballHitGround)
                 If (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) < 0) Then
@@ -117,19 +132,15 @@ Public Class ProjectileForm
                     time += 0.1
                 End If
             End While
-            ClearOutputField()
-            TotalOutputBox.AppendText("Time: " + time.ToString("####0.00") + " " + "seconds")
-        Else
-            ThrowError()
-        End If
+
+        TotalOutputBox.AppendText("Time: " + time.ToString("####0.00") + " " + "seconds")
 
     End Sub
 
     Private Sub DisplayTableButton_Click(sender As Object, e As EventArgs) Handles DisplayTableButton.Click
-
-        If (InputValid()) Then
-            Dim time As Double = 0.00
-            Dim ballHitGround As Boolean = False
+        ClearOutputField()
+        Dim time As Double = 0.00
+        Dim ballHitGround As Boolean = False
             Dim format As String = "{0,4}{1,20}"
             Dim builder As New Text.StringBuilder
             builder.AppendFormat(format, "Time:", "Height: ")
@@ -141,9 +152,6 @@ Public Class ProjectileForm
             End While
 
             TotalOutputBox.Text = builder.ToString()
-        Else
-            ThrowError()
-        End If
 
     End Sub
 
