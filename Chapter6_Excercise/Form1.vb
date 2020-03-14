@@ -23,6 +23,12 @@ Public Class ProjectileForm
 
     End Function
 
+    Private Function GetVelocity() As Double
+
+        Return Convert.ToDouble(velocityBox.Text)
+
+    End Function
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
