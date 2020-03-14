@@ -28,9 +28,9 @@ Partial Class ProjectileForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.MaxHeightButton = New System.Windows.Forms.Button()
+        Me.ApproxTimeButton = New System.Windows.Forms.Button()
+        Me.DisplayTableButton = New System.Windows.Forms.Button()
         Me.QuitButton = New System.Windows.Forms.Button()
         Me.TotalOutputBox = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
@@ -87,32 +87,32 @@ Partial Class ProjectileForm
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "(Feet)"
         '
-        'Button1
+        'MaxHeightButton
         '
-        Me.Button1.Location = New System.Drawing.Point(16, 125)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(161, 61)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Determine Maximum Height"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.MaxHeightButton.Location = New System.Drawing.Point(16, 125)
+        Me.MaxHeightButton.Name = "MaxHeightButton"
+        Me.MaxHeightButton.Size = New System.Drawing.Size(161, 61)
+        Me.MaxHeightButton.TabIndex = 6
+        Me.MaxHeightButton.Text = "Determine Maximum Height"
+        Me.MaxHeightButton.UseVisualStyleBackColor = True
         '
-        'Button2
+        'ApproxTimeButton
         '
-        Me.Button2.Location = New System.Drawing.Point(16, 225)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(161, 61)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Determine Approximate Time Until Ball Hits the Ground"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ApproxTimeButton.Location = New System.Drawing.Point(16, 225)
+        Me.ApproxTimeButton.Name = "ApproxTimeButton"
+        Me.ApproxTimeButton.Size = New System.Drawing.Size(161, 61)
+        Me.ApproxTimeButton.TabIndex = 7
+        Me.ApproxTimeButton.Text = "Determine Approximate Time Until Ball Hits the Ground"
+        Me.ApproxTimeButton.UseVisualStyleBackColor = True
         '
-        'Button3
+        'DisplayTableButton
         '
-        Me.Button3.Location = New System.Drawing.Point(335, 125)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(161, 61)
-        Me.Button3.TabIndex = 8
-        Me.Button3.Text = "Display Table"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.DisplayTableButton.Location = New System.Drawing.Point(335, 125)
+        Me.DisplayTableButton.Name = "DisplayTableButton"
+        Me.DisplayTableButton.Size = New System.Drawing.Size(161, 61)
+        Me.DisplayTableButton.TabIndex = 8
+        Me.DisplayTableButton.Text = "Display Table"
+        Me.DisplayTableButton.UseVisualStyleBackColor = True
         '
         'QuitButton
         '
@@ -140,9 +140,9 @@ Partial Class ProjectileForm
         Me.ClientSize = New System.Drawing.Size(544, 438)
         Me.Controls.Add(Me.TotalOutputBox)
         Me.Controls.Add(Me.QuitButton)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.DisplayTableButton)
+        Me.Controls.Add(Me.ApproxTimeButton)
+        Me.Controls.Add(Me.MaxHeightButton)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -162,9 +162,9 @@ Partial Class ProjectileForm
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents MaxHeightButton As Button
+    Friend WithEvents ApproxTimeButton As Button
+    Friend WithEvents DisplayTableButton As Button
     Friend WithEvents QuitButton As Button
     Friend WithEvents TotalOutputBox As TextBox
 End Class
