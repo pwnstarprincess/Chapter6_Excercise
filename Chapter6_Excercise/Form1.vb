@@ -29,13 +29,6 @@ Public Class ProjectileForm
 
     End Function
 
-    Private Sub ClearInputFields()
-
-        heightBox.Clear()
-        velocityBox.Clear()
-
-    End Sub
-
     Private Sub ClearOutputField()
 
         TotalOutputBox.Clear()
