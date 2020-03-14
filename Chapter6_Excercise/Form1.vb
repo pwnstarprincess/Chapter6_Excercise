@@ -3,9 +3,11 @@
 
 Public Class ProjectileForm
 
+    Const GRAVITY As Integer = 32
+
     Private Sub QuitProgram()
 
-        End
+        Me.Close()
 
     End Sub
 
@@ -16,6 +18,10 @@ Public Class ProjectileForm
     Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
 
         QuitProgram()
+
+    End Sub
+
+    Private Sub MaxHeightButton_Click(sender As Object, e As EventArgs) Handles MaxHeightButton.Click
 
     End Sub
 End Class
