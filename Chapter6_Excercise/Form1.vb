@@ -97,12 +97,21 @@ Public Class ProjectileForm
         End If
     End Sub
 
+    Private Sub HeightBox_Focus(sender As Object, e As EventArgs) Handles heightBox.GotFocus
+        ClearOutputField()
+
+    End Sub
+
     Private Sub VelocityBox_TextChanged(sender As Object, e As EventArgs) Handles velocityBox.Leave
 
         If (String.IsNullOrEmpty(velocityBox.Text) Or Not IsNumeric(velocityBox.Text)) Then
             ThrowError()
             velocityBox.Clear()
         End If
+    End Sub
+
+    Private Sub VElocityBox_Focus(sender As Object, e As EventArgs) Handles velocityBox.GotFocus
+        ClearOutputField()
     End Sub
 
     Private Sub ApproxTimeButton_Click(sender As Object, e As EventArgs) Handles ApproxTimeButton.Click
