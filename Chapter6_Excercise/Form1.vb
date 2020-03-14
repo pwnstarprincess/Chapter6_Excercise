@@ -42,6 +42,15 @@ Public Class ProjectileForm
 
     End Sub
 
+    Private Function HeightAndVelocityNotEmpty() As Boolean
+
+        If (Not String.IsNullOrEmpty(heightBox.Text) And Not String.IsNullOrEmpty(velocityBox.Text)) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -54,9 +63,11 @@ Public Class ProjectileForm
 
     Private Sub MaxHeightButton_Click(sender As Object, e As EventArgs) Handles MaxHeightButton.Click
 
-        ClearOutputField()
-        TotalOutputBox.AppendText("Max Height:    " + Convert.ToString(MaxHeight(GetHeight(), GetVelocity())) & Environment.NewLine)
-        ClearInputFields()
+        If (HeightAndVelocityNotEmpty()) Then
+            ClearOutputField()
+            TotalOutputBox.AppendText("Max Height:    " + Convert.ToString(MaxHeight(GetHeight(), GetVelocity())) & Environment.NewLine)
+            ClearInputFields()
+        End If
 
 
     End Sub
