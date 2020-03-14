@@ -84,8 +84,8 @@ Public Class ProjectileForm
 
         If (InputValid()) Then
             ClearOutputField()
-            TotalOutputBox.AppendText("Max Height:    " + Convert.ToString(CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), (GetVelocity() / GRAVITY))) & Environment.NewLine)
-            ClearInputFields()
+            TotalOutputBox.AppendText("Max Height: " + CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), (GetVelocity() / GRAVITY)).ToString("####0.00"))
+            ''         ClearInputFields()
         Else
             ThrowError()
         End If
@@ -121,8 +121,8 @@ Public Class ProjectileForm
                 time += 0.1
             End If
         End While
-
-        TotalOutputBox.AppendText("The approx time that the ball hit the ground is:    " + Convert.ToString(time) + "seconds" & Environment.NewLine)
+        ClearOutputField()
+        TotalOutputBox.AppendText("Time: " + time.ToString("####0.00") + "seconds")
 
     End Sub
 
