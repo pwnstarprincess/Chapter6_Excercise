@@ -1,6 +1,7 @@
 ﻿''Jennifer Pezzulo
 ''March 14, 2020
 ''Chapter 6 Excercise
+''git repo:  https://github.com/pwnstarprincess/Chapter6_Excercise.git
 
 Imports System.Text
 
