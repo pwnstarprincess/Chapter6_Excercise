@@ -11,6 +11,12 @@ Public Class ProjectileForm
 
     End Sub
 
+    Private Function MaxHeight(height As Double, velocity As Double)
+
+        Return height + velocity * (velocity / GRAVITY) - 16 * ((velocity / GRAVITY) * (velocity / GRAVITY))
+
+    End Function
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -22,6 +28,8 @@ Public Class ProjectileForm
     End Sub
 
     Private Sub MaxHeightButton_Click(sender As Object, e As EventArgs) Handles MaxHeightButton.Click
+
+        TotalOutputBox.AppendText("Max Height:    " + MaxHeight(heightBox.Text, velocityBox.Text) & Environment.NewLine)
 
     End Sub
 End Class

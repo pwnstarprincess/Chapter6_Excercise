@@ -22,8 +22,8 @@ Partial Class ProjectileForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.heightBox = New System.Windows.Forms.TextBox()
+        Me.velocityBox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -35,19 +35,19 @@ Partial Class ProjectileForm
         Me.TotalOutputBox = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'heightBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(161, 37)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(58, 26)
-        Me.TextBox1.TabIndex = 0
+        Me.heightBox.Location = New System.Drawing.Point(161, 37)
+        Me.heightBox.Name = "heightBox"
+        Me.heightBox.Size = New System.Drawing.Size(58, 26)
+        Me.heightBox.TabIndex = 0
         '
-        'TextBox2
+        'velocityBox
         '
-        Me.TextBox2.Location = New System.Drawing.Point(438, 34)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(58, 26)
-        Me.TextBox2.TabIndex = 1
+        Me.velocityBox.Location = New System.Drawing.Point(438, 34)
+        Me.velocityBox.Name = "velocityBox"
+        Me.velocityBox.Size = New System.Drawing.Size(58, 26)
+        Me.velocityBox.TabIndex = 1
         '
         'Label1
         '
@@ -147,8 +147,8 @@ Partial Class ProjectileForm
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.velocityBox)
+        Me.Controls.Add(Me.heightBox)
         Me.Name = "ProjectileForm"
         Me.Text = "Projectile Motion"
         Me.ResumeLayout(False)
@@ -156,8 +156,8 @@ Partial Class ProjectileForm
 
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents heightBox As TextBox
+    Friend WithEvents velocityBox As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
