@@ -123,7 +123,7 @@ Public Class ProjectileForm
         Dim builder As New Text.StringBuilder
         builder.AppendFormat(format, "Time:", "Height: ")
         builder.AppendLine()
-        While time <> 5.0 And Not BallHitGround(time)
+        While time <= 5.0 And Not BallHitGround(time)
 
             GetTableValues(time, format, builder)
 
