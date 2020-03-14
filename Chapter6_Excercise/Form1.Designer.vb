@@ -31,7 +31,7 @@ Partial Class ProjectileForm
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.QuitButton = New System.Windows.Forms.Button()
         Me.TotalOutputBox = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
@@ -114,14 +114,14 @@ Partial Class ProjectileForm
         Me.Button3.Text = "Display Table"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Button4
+        'QuitButton
         '
-        Me.Button4.Location = New System.Drawing.Point(335, 225)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(161, 61)
-        Me.Button4.TabIndex = 9
-        Me.Button4.Text = "Quit"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.QuitButton.Location = New System.Drawing.Point(335, 225)
+        Me.QuitButton.Name = "QuitButton"
+        Me.QuitButton.Size = New System.Drawing.Size(161, 61)
+        Me.QuitButton.TabIndex = 9
+        Me.QuitButton.Text = "Quit"
+        Me.QuitButton.UseVisualStyleBackColor = True
         '
         'TotalOutputBox
         '
@@ -139,7 +139,7 @@ Partial Class ProjectileForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(544, 438)
         Me.Controls.Add(Me.TotalOutputBox)
-        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -165,6 +165,6 @@ Partial Class ProjectileForm
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents QuitButton As Button
     Friend WithEvents TotalOutputBox As TextBox
 End Class
