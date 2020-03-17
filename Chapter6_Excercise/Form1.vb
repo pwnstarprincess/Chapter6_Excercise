@@ -44,11 +44,45 @@ Public Class ProjectileForm
 
     End Sub
 
-    Private Sub ThrowError()
+    Private Sub ThrowError(problem As String)
 
-        TotalOutputBox.BackColor = DefaultBackColor
-        TotalOutputBox.ForeColor = Color.Red
-        TotalOutputBox.Text = "ERROR!!! Please enter a numeric value for the initial height and initial velocity"
+        Select Case problem
+            Case "empty"
+                TotalOutputBox.BackColor = DefaultBackColor
+                TotalOutputBox.ForeColor = Color.Red
+                TotalOutputBox.Text = "ERROR!!! Please enter a numeric value for the initial height and initial velocity"
+            Case "heightBox"
+                TotalOutputBox.BackColor = DefaultBackColor
+                TotalOutputBox.ForeColor = Color.Red
+                TotalOutputBox.Text = "ERROR!!! The height must be at 0 or above as the origin is assumed to be at (0,0)"
+            Case "velocityBox"
+                TotalOutputBox.BackColor = DefaultBackColor
+                TotalOutputBox.ForeColor = Color.Red
+                TotalOutputBox.Text = "ERROR!!! Please enter a positive number for the velocity"
+        End Select
+
+    End Sub
+
+    Private Sub InputValidation(myTrigger As TextBox)
+
+        Select Case True
+
+            Case (String.IsNullOrEmpty(myTrigger.Text) Or Not IsNumeric(myTrigger.Text))
+                ThrowError("empty")
+                myTrigger.Clear()
+                DisableButtons()
+
+            Case (myTrigger.Text < 0)
+                ThrowError(myTrigger.Name.ToString)
+                myTrigger.Clear()
+                DisableButtons()
+
+            Case (Not String.IsNullOrEmpty(myTrigger.Text) Or IsNumeric(myTrigger.Text))
+                ClearOutputField()
+                EnableButtons()
+                TotalOutputBox.ForeColor = Color.Black
+
+        End Select
 
     End Sub
 
@@ -68,30 +102,11 @@ Public Class ProjectileForm
 
     End Sub
 
-    Private Sub HeightBox_TextChanged(sender As Object, e As EventArgs) Handles heightBox.Leave
+    Private Sub TextBox_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles velocityBox.Leave, heightBox.Leave
 
-        If (String.IsNullOrEmpty(heightBox.Text) Or Not IsNumeric(heightBox.Text)) Then
-            ThrowError()
-            heightBox.Clear()
-            DisableButtons()
-        Else
-            ClearOutputField()
-            EnableButtons()
-            TotalOutputBox.ForeColor = Color.Black
-        End If
-    End Sub
+        Dim myTrigger As TextBox = CType(sender, TextBox)
+        InputValidation(myTrigger)
 
-    Private Sub VelocityBox_TextChanged(sender As Object, e As EventArgs) Handles velocityBox.Leave
-
-        If (String.IsNullOrEmpty(velocityBox.Text) Or Not IsNumeric(velocityBox.Text)) Then
-            ThrowError()
-            velocityBox.Clear()
-            DisableButtons()
-        Else
-            ClearOutputField()
-            EnableButtons()
-            TotalOutputBox.ForeColor = Color.Black
-        End If
     End Sub
 
     Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
