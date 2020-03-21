@@ -84,7 +84,7 @@ Public Class ProjectileForm
                 For Each message In messages
                     TotalOutputBox.ForeColor = color
                     TotalOutputBox.AppendText(message & Environment.NewLine)
-                    TotalOutputBox.AppendText(Environment.NewLine & Environment.NewLine)
+                    TotalOutputBox.AppendText(Environment.NewLine)
 
                     InputValidation(heightBox)
                     InputValidation(velocityBox)
