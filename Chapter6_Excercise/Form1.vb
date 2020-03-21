@@ -78,7 +78,7 @@ Public Class ProjectileForm
             TotalOutputBox.BackColor = DefaultBackColor
             color = Color.Red
 
-            If (Not TotalOutputBox.Text.Contains(messages(0))) Then
+            If Not TotalOutputBox.Text.Contains(messages(0)) Then
 
                 TotalOutputBox.Clear()
                 For Each message In messages
