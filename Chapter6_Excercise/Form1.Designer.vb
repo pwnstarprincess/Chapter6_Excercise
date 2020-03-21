@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ProjectileForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ProjectileForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.heightBox = New System.Windows.Forms.TextBox()
         Me.velocityBox = New System.Windows.Forms.TextBox()
@@ -32,32 +32,29 @@ Partial Class ProjectileForm
         Me.ApproxTimeButton = New System.Windows.Forms.Button()
         Me.DisplayTableButton = New System.Windows.Forms.Button()
         Me.QuitButton = New System.Windows.Forms.Button()
-        Me.TotalOutputBox = New System.Windows.Forms.TextBox()
+        Me.TotalOutputBox = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
         'heightBox
         '
-        Me.heightBox.Location = New System.Drawing.Point(107, 24)
-        Me.heightBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.heightBox.Location = New System.Drawing.Point(160, 37)
         Me.heightBox.Name = "heightBox"
-        Me.heightBox.Size = New System.Drawing.Size(40, 20)
+        Me.heightBox.Size = New System.Drawing.Size(58, 26)
         Me.heightBox.TabIndex = 0
         '
         'velocityBox
         '
-        Me.velocityBox.Location = New System.Drawing.Point(292, 22)
-        Me.velocityBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.velocityBox.Location = New System.Drawing.Point(438, 34)
         Me.velocityBox.Name = "velocityBox"
-        Me.velocityBox.Size = New System.Drawing.Size(40, 20)
+        Me.velocityBox.Size = New System.Drawing.Size(58, 26)
         Me.velocityBox.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(194, 24)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(291, 37)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(74, 13)
+        Me.Label1.Size = New System.Drawing.Size(109, 20)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Initial Velocity:"
         '
@@ -65,20 +62,18 @@ Partial Class ProjectileForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(194, 43)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(291, 66)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(82, 13)
+        Me.Label2.Size = New System.Drawing.Size(119, 20)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "(Feet / Second)"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 24)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(12, 37)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(68, 13)
+        Me.Label3.Size = New System.Drawing.Size(101, 20)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Initial Height:"
         '
@@ -86,67 +81,64 @@ Partial Class ProjectileForm
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(8, 43)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(12, 66)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(34, 13)
+        Me.Label4.Size = New System.Drawing.Size(52, 20)
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "(Feet)"
         '
         'MaxHeightButton
         '
-        Me.MaxHeightButton.Location = New System.Drawing.Point(11, 81)
-        Me.MaxHeightButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaxHeightButton.Location = New System.Drawing.Point(16, 125)
         Me.MaxHeightButton.Name = "MaxHeightButton"
-        Me.MaxHeightButton.Size = New System.Drawing.Size(107, 44)
+        Me.MaxHeightButton.Size = New System.Drawing.Size(160, 68)
         Me.MaxHeightButton.TabIndex = 6
         Me.MaxHeightButton.Text = "Determine Maximum Height"
         Me.MaxHeightButton.UseVisualStyleBackColor = True
         '
         'ApproxTimeButton
         '
-        Me.ApproxTimeButton.Location = New System.Drawing.Point(11, 144)
-        Me.ApproxTimeButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.ApproxTimeButton.Location = New System.Drawing.Point(16, 222)
         Me.ApproxTimeButton.Name = "ApproxTimeButton"
-        Me.ApproxTimeButton.Size = New System.Drawing.Size(191, 41)
+        Me.ApproxTimeButton.Size = New System.Drawing.Size(286, 63)
         Me.ApproxTimeButton.TabIndex = 7
         Me.ApproxTimeButton.Text = "Determine Approximate Time Until Ball Hits the Ground"
         Me.ApproxTimeButton.UseVisualStyleBackColor = True
         '
         'DisplayTableButton
         '
-        Me.DisplayTableButton.Location = New System.Drawing.Point(225, 81)
-        Me.DisplayTableButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.DisplayTableButton.Location = New System.Drawing.Point(338, 125)
         Me.DisplayTableButton.Name = "DisplayTableButton"
-        Me.DisplayTableButton.Size = New System.Drawing.Size(107, 44)
+        Me.DisplayTableButton.Size = New System.Drawing.Size(160, 68)
         Me.DisplayTableButton.TabIndex = 8
         Me.DisplayTableButton.Text = "Display Table"
         Me.DisplayTableButton.UseVisualStyleBackColor = True
         '
         'QuitButton
         '
-        Me.QuitButton.Location = New System.Drawing.Point(225, 144)
-        Me.QuitButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.QuitButton.Location = New System.Drawing.Point(338, 222)
         Me.QuitButton.Name = "QuitButton"
-        Me.QuitButton.Size = New System.Drawing.Size(107, 41)
+        Me.QuitButton.Size = New System.Drawing.Size(160, 63)
         Me.QuitButton.TabIndex = 9
         Me.QuitButton.Text = "Quit"
         Me.QuitButton.UseVisualStyleBackColor = True
         '
         'TotalOutputBox
         '
-        Me.TotalOutputBox.Location = New System.Drawing.Point(64, 208)
-        Me.TotalOutputBox.Multiline = True
+        Me.TotalOutputBox.Location = New System.Drawing.Point(96, 320)
+        Me.TotalOutputBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TotalOutputBox.Name = "TotalOutputBox"
         Me.TotalOutputBox.ReadOnly = True
-        Me.TotalOutputBox.Size = New System.Drawing.Size(222, 272)
+        Me.TotalOutputBox.Size = New System.Drawing.Size(331, 416)
         Me.TotalOutputBox.TabIndex = 11
+        Me.TotalOutputBox.Text = ""
+        Me.TotalOutputBox.Enabled = False
         '
         'ProjectileForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(363, 492)
+        Me.ClientSize = New System.Drawing.Size(544, 757)
         Me.Controls.Add(Me.TotalOutputBox)
         Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.DisplayTableButton)
@@ -158,7 +150,6 @@ Partial Class ProjectileForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.velocityBox)
         Me.Controls.Add(Me.heightBox)
-        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "ProjectileForm"
         Me.Text = "Projectile Motion"
         Me.ResumeLayout(False)
@@ -176,5 +167,5 @@ Partial Class ProjectileForm
     Friend WithEvents ApproxTimeButton As Button
     Friend WithEvents DisplayTableButton As Button
     Friend WithEvents QuitButton As Button
-    Friend WithEvents TotalOutputBox As TextBox
+    Friend WithEvents TotalOutputBox As RichTextBox
 End Class
