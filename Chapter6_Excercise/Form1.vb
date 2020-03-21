@@ -62,6 +62,7 @@ Public Class ProjectileForm
             Return False
         End If
     End Function
+
     Private Sub IsValid(valid As Boolean, problem As String)
 
         Dim color As Color
@@ -72,13 +73,12 @@ Public Class ProjectileForm
         messages(2) = "The height must be at 0 or above as the origin is assumed to be at (0,0)"
         messages(3) = "Please enter a positive number for the velocity"
 
-
         If Not valid Then
             DisableButtons()
             TotalOutputBox.BackColor = DefaultBackColor
             color = Color.Red
 
-            If (Not (TotalOutputBox.Text.Contains(messages.Any))) Then
+            If (Not TotalOutputBox.Text.Contains(messages(0))) Then
 
                 TotalOutputBox.Clear()
                 For Each message In messages
