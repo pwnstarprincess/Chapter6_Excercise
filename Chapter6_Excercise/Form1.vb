@@ -135,6 +135,7 @@ Public Class ProjectileForm
         Select Case True
             Case (String.IsNullOrEmpty(myTrigger.Text) Or Not IsNumeric(myTrigger.Text))
                 IsValid(False, myTrigger.Name.ToString + "-Text")
+                IsValid(False, myTrigger.Name.ToString)
 
             Case (Not String.IsNullOrEmpty(myTrigger.Text) AndAlso IsNumeric(myTrigger.Text))
                 IsValid(True, myTrigger.Name.ToString + "-Text")
