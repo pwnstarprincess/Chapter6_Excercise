@@ -125,7 +125,6 @@ Partial Class ProjectileForm
         '
         'TotalOutputBox
         '
-        Me.TotalOutputBox.Enabled = True
         Me.TotalOutputBox.Location = New System.Drawing.Point(96, 320)
         Me.TotalOutputBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TotalOutputBox.Name = "TotalOutputBox"
