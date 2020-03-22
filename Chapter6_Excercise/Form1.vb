@@ -24,8 +24,10 @@ Public Class ProjectileForm
 
     'Function to determine if the ball hit the ground
     Private Function BallHitGround(time As Double) As Boolean
-        'IF H(t) < 0 then the ball hit the ground
-        If (CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) < 0) Then
+        'IF H(t) < or equal to 0 then the ball hit the ground
+        'Checking to see if time has exceeded 0 here as well because technically we can 
+        'Launch the projectile from the origin of the round at (0,0)
+        If (time > 0 And CalculateHeightAsFunctionOfTime(GetHeight(), GetVelocity(), time) <= 0) Then
             Return True
         Else
             'h(t) greater than 0 return false because the ball has not hit the ground yet
