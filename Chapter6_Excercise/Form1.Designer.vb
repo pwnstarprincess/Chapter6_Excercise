@@ -125,12 +125,12 @@ Partial Class ProjectileForm
         '
         'TotalOutputBox
         '
-        Me.TotalOutputBox.Enabled = False
+        Me.TotalOutputBox.Enabled = True
         Me.TotalOutputBox.Location = New System.Drawing.Point(96, 320)
         Me.TotalOutputBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TotalOutputBox.Name = "TotalOutputBox"
         Me.TotalOutputBox.ReadOnly = True
-        Me.TotalOutputBox.Size = New System.Drawing.Size(331, 369)
+        Me.TotalOutputBox.Size = New System.Drawing.Size(331, 319)
         Me.TotalOutputBox.TabIndex = 11
         Me.TotalOutputBox.Text = ""
         '
@@ -138,7 +138,7 @@ Partial Class ProjectileForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(544, 779)
+        Me.ClientSize = New System.Drawing.Size(544, 680)
         Me.Controls.Add(Me.TotalOutputBox)
         Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.DisplayTableButton)

@@ -81,7 +81,7 @@ Public Class ProjectileForm
         'Populate message array with input requirements
         messages(0) = "Please enter a numeric value for the initial height"
         messages(1) = "Please enter a numeric value for the initial velocity"
-        messages(2) = "The height must be at 0 or above as the origin is assumed to be at (0,0)"
+        messages(2) = "The height must be at 0 or above as the origin of the ground is assumed to be at (0,0)"
         messages(3) = "Please enter a positive number for the velocity"
         'If inpout is not valid Disable the buttons and set text color to red
         If Not valid Then
