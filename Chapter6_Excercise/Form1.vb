@@ -107,7 +107,7 @@ Public Class ProjectileForm
             TotalOutputBox.BackColor = DefaultBackColor
             color = Color.Green
         End If
-        'Depedning on the problem manipulate the applicable message
+        'Depending on the problem manipulate the applicable message
         Select Case problem
             Case "heightBox-Text"
 
